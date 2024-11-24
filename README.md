@@ -4,7 +4,6 @@
 This project implements a binary image classification model to distinguish between images of dogs and cats using the MobileNetV2 architecture. The dataset used is the popular Dogs vs. Cats dataset from Kaggle, containing labeled images of dogs and cats.
 
 ### **Features**  
-The dataset includes property attributes such as:  
 
 - Pretrained MobileNetV2 Model: Leverages transfer learning for faster training and improved performance.
 - Transfer Learning: Pretrained weights on ImageNet are used for faster and more efficient training.
