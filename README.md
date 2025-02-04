@@ -1,45 +1,75 @@
-# **Dog Cat Classification**  
+# 🐶🐱 Dog-Cat Classification using MobileNetV2
 
-## **Overview**  
-This project implements a binary image classification model to distinguish between images of dogs and cats using the MobileNetV2 architecture. The dataset used is the popular Dogs vs. Cats dataset from Kaggle, containing labeled images of dogs and cats.
+This repository contains a deep learning project that classifies images of dogs and cats. The model leverages **transfer learning** using the **MobileNetV2** architecture pretrained on ImageNet. The project achieves **99.87% training accuracy** and **96.96% test accuracy**.
 
-### **Features**  
+---
 
-- Pretrained MobileNetV2 Model: Leverages transfer learning for faster training and improved performance.
-- Transfer Learning: Pretrained weights on ImageNet are used for faster and more efficient training.
-- Metrics: Achieves high accuracy and precision across all 10 classes.
+## 🚀 Features
 
-Dataset Features:
+- **Transfer Learning**: Utilized MobileNetV2 for high performance on image classification tasks.
+- **Image Preprocessing**: Input images were rescaled by dividing pixel values by 255.
+- **High Accuracy**: Achieved impressive accuracy on both training and test datasets.
+- **Scalable Architecture**: Suitable for use in real-world scenarios with minimal fine-tuning.
 
-The Dogs vs. Cats dataset contains 25,000 images of cats and dogs:  
+---
 
-Size:  
-Training Set: 20,000 images (10,000 each for dogs and cats).  
-Validation/Test Set: 5,000 images.  
+## 💂️ Dataset
 
-# Data Pre-Processing  
-- Resized All Images to (224,224)  
-- Converted them to RGB  
-- Converted them to NumPy Arrays  
-- Rescaled all Images  
+- The dataset consists of labeled images of dogs and cats.
+- Images were preprocessed as follows:
+  - Rescaled pixel values by dividing by **255** for normalization.
+
+---
+
+## 📊 Model Performance
+
+| **Metric**        | **Accuracy** |
+|--------------------|--------------|
+| Training Accuracy  | 99.87%       |
+| Test Accuracy      | 96.96%       |
+
+---
+
+## 🛠️ Technology Stack
+
+- **Programming Language**: Python
+- **Deep Learning Framework**: TensorFlow/Keras
+- **Pretrained Model**: MobileNetV2 (Transfer Learning)
+
+---
+
+## 📖 How It Works
+
+1. **Data Pre-Processing** 
+    - Resized All Images to (224,224)  
+    - Converted them to RGB  
+    - Converted them to NumPy Arrays  
+    - Rescaled all Images 
+
+2. **Model Architecture**:
+   - Base model: MobileNetV2 pretrained on ImageNet.
+   - Custom fully connected layers added for binary classification (dog vs. cat).
+
+3. **Training**:
+   - The model was fine-tuned on the dog-cat dataset.
+   - Early stopping was used to prevent overfitting.
+
+4. **Evaluation**:
+   - The model was evaluated on a separate test set, achieving high accuracy.
   
-# Model Architecture
+---
 
-base_model = tf.keras.applications.MobileNetV2(input_shape=(224,224,3),include_top=False,weights="imagenet")  
-Freeze the base model  
-base_model.trainable = False  
+## 🎯 Results
 
-model = Sequential([  
+The model performs well on unseen data, demonstrating its ability to generalize.
 
-  base_model, # if you are using base_model as input layer you dont need to define shape as long as it is defined in the model itself  
-  GlobalAveragePooling2D(),  
-  Dense(2, activation='sigmoid')  
-  
-])  
+## 🤝 Contributing
 
-# Model Evaluation:
-- Accuracy on Training Data: 99.87%  
-- Accuracy on Testing Data: 96.96%  
+Contributions are welcome! Feel free to open an issue or submit a pull request for any enhancements or bug fixes.
 
-##### **Getting Started** 
-Clone the repo and install dependencies.
+---
+
+## 🌟 Acknowledgments
+
+- **MobileNetV2**: For providing an excellent base model for transfer learning.
+- The open-source community for inspiration and resources.
